@@ -202,19 +202,19 @@ function searchCity() {
 function selectBackground(weatherDescription) {
     const html = document.querySelector('html');
     if (weatherDescription == 'Clouds') {
-        html.style.backgroundImage = 'url(../src/images/cloudy-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/cloudy-bi.jpg)';
     } else if (weatherDescription == 'Clear') {
-        html.style.backgroundImage = 'url(../src/images/sunny-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/sunny-bi.jpg)';
     } else if (weatherDescription == 'Rain') {
-        html.style.backgroundImage = 'url(../src/images/morning-rainy-bi.png)';
+        html.style.backgroundImage = 'url(../dist/images/morning-rainy-bi.png)';
     } else if (weatherDescription == 'Snow') {
-        html.style.backgroundImage = 'url(../src/images/morning-snowy-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/morning-snowy-bi.jpg)';
     } else if (weatherDescription == 'Drizzle') {
-        html.style.backgroundImage = 'url(../src/images/morning-drizzle-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/morning-drizzle-bi.jpg)';
     } else if (weatherDescription == 'Thunderstorm') {
-        html.style.backgroundImage = 'url(../src/images/morning-thunderstormy-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/morning-thunderstormy-bi.jpg)';
     } else {
-        html.style.backgroundImage = 'url(../src/images/mist-bi.jpg)';
+        html.style.backgroundImage = 'url(../dist/images/mist-bi.jpg)';
     }
 }
 
