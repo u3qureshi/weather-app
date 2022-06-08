@@ -1,4 +1,5 @@
 # weather-app
+[LIVE PREVIEW](https://productive-apples.surge.sh/)
 App allows a user to fetch weather from any city around the world using city names.
 - Weather available in both Celsius and Fahrenheit
 - Promises
