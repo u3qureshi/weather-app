@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--https://www.theodinproject.com/lessons/node-path-javascript-working-with-apis-->
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../dist/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+    <title>Weather App</title>
+</head>
+
+<body>
+    <div class="card-container card-container-one">
+        <h2 class="city">Weather</h2>
+        <div class="weather-container">
+            <h1 class="temperature">99°C</h1>
+            <div class="weather">
+                <img src="../src/images/partly-cloudy.png" alt="" class="weather-icon" width="25px" height="auto">
+                <div class="weather-description">
+                </div>
+            </div>
+            <div class="weather">
+                <img src="../src/images/humidity.png" alt="Search Button" width="25px" height="auto" />
+                <div class="weather-humidity"></div>
+            </div>
+            <div class="weather">
+                <img src="../src/images/feels-like.png" alt="Search Button" width="25px" height="auto" />
+                <div class="weather-feels-like"></div>
+            </div>
+            <div class="weather">
+                <img src="../src/images/wind.png" alt="Search Button" width="25px" height="auto" />
+                <div class="weather-wind-speed"></div>
+            </div>
+        </div>
+    </div>
+    <div class="card-container card-container-two">
+        <div class="clock">09:24 am</div>
+        <h2 class="title">Current Weather</h2>
+        <h3 class="subtitle">Search location</h3>
+        <div class="location-search-icon">
+            <img src="../src/images/iconmonstr-location-27.svg" alt="Search Button" width="45px" height="auto" />
+        </div>
+        <div class="search-bar">
+            <input type="text" class="search-bar-input" placeholder="Search City">
+            <img class="search-button" src="../src/images/icons8-search.svg" alt="Search Button" width="25px" height="auto" />
+        </div>
+        <div class="conversion-container">
+            <input class="conversion-switch" type="checkbox" name="conversion-switch" id="conversion-switch">
+            <label class="conversion-switch-label" for="conversion-switch">°C</label>
+        </div>
+        <h5 id="copyright">
+            <a href="https://github.com/u3qureshi/classic-snake-game" target="_blank" class="fa fa-github" style="font-size: 1.5em;"></a>
+        </h5>
+    </div>
+
+
+    <script src="../dist/main.js"></script>
+</body>
+
+</html>
