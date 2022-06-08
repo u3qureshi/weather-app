@@ -14,6 +14,7 @@ html {
 * {
     font-family: 'Ubuntu', Arial, sans-serif;
     font-size: large;
+    color: black;
 }
 
 body {
@@ -26,7 +27,7 @@ body {
 }
 
 :root {
-    --general-bi: rgba(22, 35, 35, 0.817);
+    --general-bi: rgba(255, 255, 255, 0.555);
     --padding: 1.5em;
     --border-radius: 1em;
 }
@@ -46,15 +47,15 @@ body {
 .weather-container {
     display: flex;
     flex-direction: column;
-    color: white;
+    color: black;
 }
 
 .city {
     align-self: center;
     font-size: 2rem;
-    margin: 0.5em;
+    margin: 0em;
     font-weight: 900;
-    color: rgb(255, 255, 0);
+    color: black;
 }
 
 .search-bar {
@@ -65,9 +66,8 @@ body {
 
 .search-bar-input {
     margin-right: 0.3em;
-    padding: 0.3em;
-    border-radius: 0.5em;
-    filter: drop-shadow(1px 1px 1px black);
+    padding: 0.5em;
+    border-radius: 1.5em;
 }
 
 .temperature {
@@ -105,7 +105,6 @@ body {
 
 .weather img {
     margin-right: 0.3em;
-    filter: drop-shadow(1px 1px 1px black);
 }
 
 .weather {
@@ -114,30 +113,37 @@ body {
     margin-bottom: 0.5em;
 }
 
+.weather-icon {
+    filter: drop-shadow(2px 3px 2px black);
+}
+
 .search-bar .search-button {
-    padding-inline: 0.2em;
-    border-radius: 10px;
-    background: rgba(255, 255, 255, 0.833);
+    padding-inline: 0.5em;
+    border-radius: 1.5em;
+    background: rgba(255, 255, 0, 0.6);
     cursor: pointer;
     transition: 150ms ease-in;
-    filter: drop-shadow(1px 1px 1px black);
 }
 
 .search-bar .search-button:hover {
     padding-right: 1em;
-    margin-right: -0.8em;
-    opacity: 0.8;
+    margin-right: -0.5em;
+    opacity: 0.9;
+}
+
+.search-bar-input::placeholder {
+    color: gray;
+    opacity: 0.7;
 }
 
 input[type='checkbox'] {
     -webkit-appearance: none;
     cursor: pointer;
     position: relative;
-    background-color: aliceblue;
+    background-color: lightgrey;
     width: 60px;
     height: 30px;
     border-radius: 20px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 }
 
 input[type='checkbox']::before {
@@ -145,7 +151,7 @@ input[type='checkbox']::before {
     position: absolute;
     height: 30px;
     width: 30px;
-    background-color: darkblue;
+    background-color: rgb(0, 0, 99);
     border-radius: 20px;
     transform: scale(0.9);
     transition: 150ms ease-in;
@@ -153,7 +159,7 @@ input[type='checkbox']::before {
 }
 
 input:checked[type='checkbox']::before {
-    background-color: darkred;
+    background-color: rgb(98, 0, 0);
     left: 30px;
 }
 
@@ -169,12 +175,12 @@ input:checked[type='checkbox']::before {
 .conversion-switch-label {
     font-size: 1.5rem;
     margin-left: 0.7em;
-    color: white;
+    color: black;
 }
 
 .location-search-icon {
     display: flex;
-    background: rgba(197, 244, 197, 0.753);
+    background: rgba(255, 255, 0, 0.5);
     align-self: center;
     margin: 1em;
     padding: 0.5em;
@@ -188,28 +194,35 @@ input:checked[type='checkbox']::before {
 }
 
 .title {
-    color: white;
+    color: black;
     font-size: 2rem;
     align-self: center;
     margin: 0.3em;
 }
 
 .subtitle {
-    color: white;
+    color: black;
     font-size: 1.5rem;
     align-self: center;
     margin: 0;
 }
 
 .search-bar-input {
-    background: rgba(255, 255, 255, 0.833);
+    background: rgba(255, 255, 0, 0.6);
     border: none;
+    box-shadow: none;
+}
+
+.search-bar-input:focus {
+    outline-color: gray;
+    outline-width: 1px;
+    outline-style: solid;
 }
 
 .clock {
     font-family: 'ClockFont', Arial, Helvetica, sans-serif;
     font-size: 2rem;
-    color: white;
+    color: black;
     font-weight: 900;
     align-self: center;
 }
@@ -223,11 +236,26 @@ input:checked[type='checkbox']::before {
     padding-left: 10px;
     text-align: center;
     text-decoration: none;
-    color: lightblue;
+    color: rgb(69, 69, 69);
 }
 
 .fa:hover {
-    color: rgba(255, 255, 255, 0.708);
+    opacity: 0.6;
     transition: 0.5s;
     transform: scale(1.1);
+}
+
+.weather-container.loading {
+    visibility: hidden;
+    max-height: 30px;
+    position: relative;
+}
+
+.weather-container.loading:after {
+    visibility: visible;
+    content: attr(data-content);
+    color: attr(data-color);
+    position: absolute;
+    top: 20px;
+    left: 20px;
 }

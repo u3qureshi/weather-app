@@ -3,9 +3,18 @@ const conversionSwitch = document.querySelector('.conversion-switch');
 const conversionSwitchLabel = document.querySelector('.conversion-switch-label');
 const locationButton = document.querySelector('.location-search-icon');
 const searchButton = document.querySelector('.search-button');
+const searchInput = document.querySelector('.search-bar-input');
+const weatherContainer = document.querySelector('.weather-container');
+let root = document.documentElement;
+
 let currentCityName = '';
 //SetInterval for clock function every 1000ms
 window.setInterval(displayCurrentTime, 1000);
+//Enter event listener for enter key in the input
+searchInput.addEventListener('keyup', (e) => {
+    if (e.key == 'Enter')
+        searchCity();
+});
 
 let weather = {
     fetchWeatherWithCity: (cityName, unit) => {
@@ -18,6 +27,18 @@ let weather = {
                 } else {
                     weather.displayWeatherF(data);
                 }
+            })
+            .catch(error => {
+                searchInput.style.border = '1px solid red';
+                searchInput.placeholder = 'Enter a valid city';
+                setTimeout(() => {
+                    searchInput.style.border = 'none';
+                    searchInput.placeholder = 'Search City';
+                }, 1500);
+                weatherContainer.dataset.content = 'Enter a valid city'
+                setTimeout(() => {
+                    weatherContainer.dataset.content = '🌏 Enter a city to find its current weather...'
+                }, 1500);
             });
     },
 
@@ -31,6 +52,18 @@ let weather = {
                 } else {
                     weather.displayWeatherF(data);
                 }
+            })
+            .catch(error => {
+                searchInput.style.border = '1px solid red';
+                searchInput.placeholder = 'Enter a valid city';
+                setTimeout(() => {
+                    searchInput.style.border = 'none';
+                    searchInput.placeholder = 'Search City';
+                }, 1500);
+                weatherContainer.dataset.content = 'Enter a valid city'
+                setTimeout(() => {
+                    weatherContainer.dataset.content = '🌏 Enter a city to find its current weather...'
+                }, 1500);
             });
     },
 
@@ -60,6 +93,9 @@ let weather = {
         humidityText.innerText = `Humidity: ${humidity}%`;
         feelsLikeText.innerText = `Feels like: ${Math.round(feels_like)}°C`;
         windText.innerText = `Wind Speed: ${Math.round(speed)} m/s`;
+
+        //loading toggle text
+        weatherContainer.classList.remove('loading');
     },
 
     /** Displays weather in Fahrenheit */
@@ -88,13 +124,15 @@ let weather = {
         humidityText.innerText = `Humidity: ${humidity}%`;
         feelsLikeText.innerText = `Feels like: ${Math.round(feels_like)}°F`;
         windText.innerText = `Wind Speed: ${Math.round(speed)} MPH`;
+
+        //loading toggle text
+        weatherContainer.classList.remove('loading');
     },
 }
 
 /** Celsiuis to fahrenheit switch */
 
 function switchIsChecked() {
-
     if (conversionSwitch.checked == true) return true;
     else return false;
 }
@@ -152,7 +190,6 @@ function capitalizeFirstLetter(string) {
 searchButton.addEventListener('click', searchCity);
 
 function searchCity() {
-    const searchInput = document.querySelector('.search-bar-input');
     const cityName = searchInput.value;
     searchInput.value = '';
     if (switchIsChecked()) {
