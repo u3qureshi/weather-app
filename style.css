@@ -1,0 +1,233 @@
+@font-face {
+    font-family: 'ClockFont';
+    src: url(../src/fonts/alarm\ clock.ttf) format('truetype');
+}
+
+html {
+    background: url(../src/images/cloudy-bi.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+* {
+    font-family: 'Ubuntu', Arial, sans-serif;
+    font-size: large;
+}
+
+body {
+    background: transparent;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+:root {
+    --general-bi: rgba(22, 35, 35, 0.817);
+    --padding: 1.5em;
+    --border-radius: 1em;
+}
+
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background: var(--general-bi);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    width: 100vw;
+    max-width: 330px;
+}
+
+.weather-container {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.city {
+    align-self: center;
+    font-size: 2rem;
+    margin: 0.5em;
+    font-weight: 900;
+    color: rgb(255, 255, 0);
+}
+
+.search-bar {
+    display: flex;
+    align-self: center;
+    flex-direction: row;
+}
+
+.search-bar-input {
+    margin-right: 0.3em;
+    padding: 0.3em;
+    border-radius: 0.5em;
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.temperature {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+.weather-humidity {
+    display: flex;
+    align-self: flex-start;
+    justify-self: center;
+    margin: 0.3em;
+}
+
+.weather-feels-like {
+    display: flex;
+    align-self: flex-start;
+    justify-self: center;
+    margin: 0.3em;
+}
+
+.weather-wind-speed {
+    display: flex;
+    align-self: flex-start;
+    justify-self: center;
+    margin: 0.3em;
+}
+
+.weather-description {
+    display: flex;
+    align-self: flex-start;
+    justify-self: center;
+    margin: 0.3em;
+}
+
+.weather img {
+    margin-right: 0.3em;
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.weather {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0.5em;
+}
+
+.search-bar .search-button {
+    padding-inline: 0.2em;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.833);
+    cursor: pointer;
+    transition: 150ms ease-in;
+    filter: drop-shadow(1px 1px 1px black);
+}
+
+.search-bar .search-button:hover {
+    padding-right: 1em;
+    margin-right: -0.8em;
+    opacity: 0.8;
+}
+
+input[type='checkbox'] {
+    -webkit-appearance: none;
+    cursor: pointer;
+    position: relative;
+    background-color: aliceblue;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input[type='checkbox']::before {
+    content: '';
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    background-color: darkblue;
+    border-radius: 20px;
+    transform: scale(0.9);
+    transition: 150ms ease-in;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+input:checked[type='checkbox']::before {
+    background-color: darkred;
+    left: 30px;
+}
+
+.conversion-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+    margin: 1em;
+}
+
+.conversion-switch-label {
+    font-size: 1.5rem;
+    margin-left: 0.7em;
+    color: white;
+}
+
+.location-search-icon {
+    display: flex;
+    background: rgba(197, 244, 197, 0.753);
+    align-self: center;
+    margin: 1em;
+    padding: 0.5em;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: 150ms ease-in-out;
+}
+
+.location-search-icon:hover {
+    opacity: 0.7;
+}
+
+.title {
+    color: white;
+    font-size: 2rem;
+    align-self: center;
+    margin: 0.3em;
+}
+
+.subtitle {
+    color: white;
+    font-size: 1.5rem;
+    align-self: center;
+    margin: 0;
+}
+
+.search-bar-input {
+    background: rgba(255, 255, 255, 0.833);
+    border: none;
+}
+
+.clock {
+    font-family: 'ClockFont', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+    color: white;
+    font-weight: 900;
+    align-self: center;
+}
+
+#copyright {
+    margin: -20px;
+    align-self: flex-end;
+}
+
+.fa {
+    padding-left: 10px;
+    text-align: center;
+    text-decoration: none;
+    color: lightblue;
+}
+
+.fa:hover {
+    color: rgba(255, 255, 255, 0.708);
+    transition: 0.5s;
+    transform: scale(1.1);
+}
