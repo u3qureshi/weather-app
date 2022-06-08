@@ -1,10 +1,10 @@
 @font-face {
     font-family: 'ClockFont';
-    src: url(../dist/fonts/alarm\ clock.ttf) format('truetype');
+    src: url(fonts/alarm\ clock.ttf) format('truetype');
 }
 
 html {
-    background: url(../dist/images/cloudy-bi.jpg) no-repeat center center fixed;
+    background: url(images/cloudy-bi.jpg) no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
