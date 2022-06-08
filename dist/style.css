@@ -247,7 +247,7 @@ input:checked[type='checkbox']::before {
 
 .weather-container.loading {
     visibility: hidden;
-    max-height: 30px;
+    max-height: 50px;
     position: relative;
 }
 
