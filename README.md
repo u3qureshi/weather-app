@@ -1,5 +1,5 @@
 # weather-app
-[LIVE PREVIEW](https://productive-apples.surge.sh/)
+[LIVE PREVIEW](https://warm-queijadas-8e315f.netlify.app/)
 App allows a user to fetch weather from any city around the world using city names. [OpenWeatherMap](https://openweathermap.org/) API was used.
 - Weather available in both Celsius and Fahrenheit
 - Display weather data in metric or imperial units
