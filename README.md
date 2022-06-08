@@ -6,7 +6,7 @@ App allows a user to fetch weather from any city around the world using city nam
 - Current time feature
 - Invalid city error alerts
 - HTML Geolocation API
-- Unique weather icons for each forecast description
+- Unique weather icons and backgrounds for different forecast descriptions
 - API fetch calls
 - Promises
 - Async and Await
